@@ -21,3 +21,7 @@ def test_post_liike():
     }
     r = requests.post(url, json=liike)
     assert str(r) == expected_response
+
+# test delete
+# test edit
+# something
