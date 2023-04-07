@@ -17,7 +17,7 @@ def test_post_liike():
         "toistot":5
     }
     r = requests.post(url, json=liike)
-    assert r.status_code == 201
+    assert r.status_code == requests.codes.created
 
 # post something into database then get the DB id for that item (last item in DB) and input that id into the delete url.
 def test_delete_liike():
