@@ -5,12 +5,9 @@ url = "http://localhost:3001/api/wolapp"
 
 def test_getlist():
     r = requests.get(url)
-    responseA = '<Response [200]>'
-    assert str(r) == responseA
-
+    assert r.status_code == requests.codes.ok
 
 def test_post_liike():
-    expected_response = "<Response [201]>"
     liike = {
         "liikeID":1,
         "name":"Kasipainot",
@@ -20,11 +17,10 @@ def test_post_liike():
         "toistot":5
     }
     r = requests.post(url, json=liike)
-    assert str(r) == expected_response
+    assert r.status_code == 201
 
 # post something into database then get the DB id for that item (last item in DB) and input that id into the delete url.
 def test_delete_liike():
-    expected_response = "<Response [200]>"
     liike = {
         "liikeID":15,
         "name":"Destroythis",
@@ -37,8 +33,8 @@ def test_delete_liike():
     r = requests.get(url)
     data = r.json()
     d = requests.delete(url+"/"+(data[-1]['id']))
-    assert str(d) == expected_response
+    assert d.status_code == requests.codes.ok
 
 
 # test edit
-# something
+
