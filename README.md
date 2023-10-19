@@ -16,11 +16,3 @@ https://requests.readthedocs.io/en/latest/
 
 https://github.com/Ethinia/workoutlogger testing this project
 
-www.pytest.org
-
-
-https://requests.readthedocs.io/en/latest/
-
-
-https://github.com/Ethinia/workoutlogger testing this project
-
